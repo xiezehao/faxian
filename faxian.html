@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <title>发现值得买</title>
+    <style>
+        body{
+            width: 100%;
+        }
+
+        #container{
+            width: 100%;
+            background: #f6f6f9;
+            padding-bottom: 20px;
+        }
+        #content{
+            width: 966px;
+            background: white;
+            margin: 0 auto;
+            border-left: 1px solid #e3e3e3;
+            border-right: 1px solid #e3e3e3;
+            border-bottom: 1px solid #e3e3e3;
+            padding: 0 8px 0px 8px;
+        }
+        #header{
+            height: 68px;
+            /* text-align: center; */
+        }
+        #logo{
+            line-height: 68px;
+            
+            display: inline;
+            
+            /* float: left; */
+        }
+        #logo img{
+             vertical-align: middle; 
+        }
+        #headerRight{
+            float: right;
+            padding: 8px 0 0 0; 
+            font-size: 14px;
+        }
+        #headerRightTop{
+            /* color: black; */
+        }
+        #headerRightBottom{
+            margin-top: 10px;
+            float: right;
+        }
+        #headerRightTop li,#headerRightBottom li{
+            display: inline-block;
+        }
+        #headerRightTop a:link,#headerRightBottom a:link{
+            color: #444;
+            text-decoration: none;
+        }
+        #headerRightTop a:hover,#headerRightBottom a:hover{
+            color: red;
+            text-decoration: underline;
+        }
+        #nav{
+            background: #e6e6e6;
+            height: 41px;
+        }
+        #navLeft{
+             float: left;
+        }
+        #navLeft li{
+            display: inline-block;
+            background: #e6e6e6;
+            padding: 11px 18px 10px;
+            font-size: 15px;
+            border-right: 1px solid white;
+            margin: 0px;
+        }
+        #navLeft li:hover{
+            cursor: pointer;
+            background: #cdcdcd;
+        }
+        #navRight{
+            float: right;
+            height: 41px;
+            line-height: 41px;
+        }
+        #navRight #search{
+            width: 237px;
+            /* height: 25px; */
+        }
+        #navRight #search_btn{
+            width: 50px;
+            height: 25px;
+            /* font-weight: bold; */
+            font-size: 15px;
+            margin-right: 8px;
+            background: #F2F2F2;
+            color: #555;
+            border:1px solid #cecece;
+            cursor: pointer;
+        }
+        #menu{
+            margin-top: 10px;
+            border-bottom: 1px solid #dcdcdc;
+            padding-bottom: 5px;
+        }
+        #remen,#fenlei{
+            display: inline;
+            font-size: 18px;
+            margin-right: 30px;
+            padding-bottom: 5px;
+            
+        }
+        #remen:hover,#fenlei:hover{
+            border-bottom: 2px solid #f04848;
+        }
+         #submenu{
+            border-bottom: 1px solid #dcdcdc;
+        }  
+        #submenu li{
+            display: inline-block;
+            font-size: 12px;
+            margin-right: 16px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        } 
+        #submenu li a:link{
+            color: black;
+            text-decoration: none;
+        }
+        #submenu li a:hover{
+            color: #bb0200;
+            text-decoration: underline;
+        }
+        #timeSelect{
+            margin-top: 16px;
+        }
+        #timeSelect li{
+            display: inline-block;
+            font-size: 12px;
+        }
+        #timeSelect li a:link{
+            color: black;
+            text-decoration: none;
+        }
+        #timeSelect li a:hover{
+            color: red;
+            text-decoration: underline;
+        }
+        #goodsList{
+            /* width: 100%;
+            height: 100%; */
+            margin-top: 20px;
+            /* display: block; */
+            overflow: hidden;
+        }
+        #goodsList ul{
+            /* float: left; */
+            margin-left: -8px;
+            margin-right: -8px;
+        }
+        #goodsList li{
+            width: 178px;
+            height: 286px;
+            border: 1px solid #dcdcdc;
+            margin: 0 8px 16px;
+            float: left;  
+            list-style: none;
+            /* text-align: center; */
+
+             
+        }
+        #goodsList img{
+            margin-top: 14px;
+            margin-left: 12px;
+        }
+        #goodsName{
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 12px;
+            margin-right: 12px;
+            overflow: hidden;
+            display: -webkit-box;   
+            -webkit-line-clamp: 2;  
+            -webkit-box-orient: vertical;
+            margin-top: 2px;   
+        }
+        #red{
+            color: #d62222;
+            
+        }
+        #goodsTime{
+            /* padding-top: 10px; */
+            margin-top: 8px;
+            margin-left: 12px;
+        }
+        #red,#time{
+            line-height: 25px;
+            font-size: 12px;
+            padding-top: 10px;
+        }
+        #buy{
+            float: right;
+            margin-right: 8px;
+            background: #bb0200;
+            color: white;
+            text-decoration: none;
+             margin-top: 5px; 
+            padding: 2px 5px;
+            font-size: 12px;
+        }
+
+        #fenye{
+           display: block;
+           overflow: hidden;
+           margin: 0 auto;
+           text-align: center;
+           margin-top: 20px;
+           margin-bottom: 30px;
+        }
+        #fenye ul{
+             /* margin: 0 auto; */
+             /* width: 150px; */
+        }
+        #fenye li{
+            /* float: left; */
+            display: inline-block;
+            margin: 0 2px; 
+            font-size: 16px;
+        }
+        #fenye li a{
+            padding: 0 8px;
+            color: #bb0200;
+        }
+        #fenye li a:link{
+            color: #bb0200;
+            text-decoration: none;
+        }
+         #fenye li a:hover{
+             background: #f04848;
+             color: white;
+             border-radius: 2px;
+         }
+         footer{
+             background: #f0f0f0;
+             margin:0 -8px;
+             padding: 20px 8px;
+         }
+         footer strong{
+             /* font-size: 1.3em; */
+             font-weight: bold;
+             margin-top: 20px;
+         }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="content">
+            <div id="header">
+                <div id="logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+
+                <div id="headerRight">
+                    <div id="headerRightTop">
+                        <ul>
+                            <li><a href="#">手机版</a></li>
+                            <li>|</li>
+                            <li><a href="#">快速查询</a></li>
+                            <li>|</li>
+                            <li><a href="#">放到收藏夹</a></li>
+                            <li>|</li>
+                            <li><a href="#">商家推荐</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="headerRightBottom">
+                        <ul>
+                            <li><a href="#">QQ登录</a></li>
+                            <li>|</li>
+                            <li><a href="#">用户登录</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="nav">
+                <div id="navLeft">
+                    <ul>
+                        <li>首页</li><li>推荐类别</li><li>白菜价</li><li>APP下载</li><li>排行榜</li>
+                    </ul>
+                </div>
+
+                <div id="navRight">
+                    <form>
+                        <input type="text" name="search" id="search" value="">
+                        <input type="button" name="" value="搜索" id="search_btn">
+                    </form>
+                </div>
+            </div>
+
+            <div id="menuDiv">
+                <div id="menu">
+                    <div id="remen">
+                        <span>热门标签</span>
+                    </div>
+                    <div id="fenlei">
+                        <span>分类筛选</span>
+                    </div>
+                </div>
+
+                <div id="submenu">
+                    <ul>
+                        <li v-for="item in remenlist"><a href="#">{{item}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div id="timeSelect">
+                <ul>
+                    <li><a href="#">24小时</a></li>
+                    <li><a href="#">48小时</a></li>
+                    <li><a href="#">5天</a></li>
+                </ul>
+            </div>
+        
+            <div id="goodsList">
+                <ul>
+                    <li v-for="i in 40">
+                        <img src="img/aaa.jpg" alt="">
+                        <h2 id="goodsName">GREEN CRAB 秋冬季男女款三合一两件套冲锋衣（第3,4款儿童款） </h2>
+                        <div id="goodsTime">
+                            <span id="time">17小时55分钟前 - </span><span id="red">475℃</span>
+                        </div>
+                        
+                        <a href="#" id="buy">领劵购买>><a>
+                    </li>
+                </ul>
+            </div>
+        
+            <div id="fenye">
+                <ul>
+                    <li><a href="">上一页</a></li>
+                    <li><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">下一页</a></li>
+                </ul>
+            </div>
+       
+            <footer>
+                <strong>关于我们</strong>
+                <p>发现值得买是性价比分享平台，小编和热心用户通过甄选出各商城优惠商品及促销活动、攻略，一起来发现值得买！</p>
+                <p>如觉得〖发现值得买〗不错，请把 www.kiees.com 分享给朋友、同学、同事或网友，谢谢你！</p>
+                <p>Copyright © 2012-2017 发现值得买 All rights reserved. 粤ICP备10084250号 网站建议: kf@kiees.com</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.4.2/dist/vue.js"></script>
+
+    <script>
+        new Vue({
+            el:"#container",
+            data:{
+                remenlist:[
+                    "鞋","耳机","鼠标","手机","内裤","袜子","拖鞋","数据线","茶","风扇","裤","灯","睡衣","皮带","月饼","键盘","衬衫","包","京东","牛仔裤" 
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
