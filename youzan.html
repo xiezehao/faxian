@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+        <style>
+            body{
+                width: 100%;
+            }
+            .header{
+                border-bottom: 1px solid #cdcdcd;
+                width: 100%;
+                position: fixed;
+                background: white;
+                box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
+            }
+            header{
+                width: 1100px;
+                height: 70px;
+                margin: 0 auto;
+                
+            }
+            header img{
+                margin-top:25px; 
+            }
+            #nav{
+                width: 914px;
+                float: right;
+                
+            }
+            #nav ul{
+                display: inline-block;
+            }
+            #nav li{
+                /* display: inline-block;
+                 */
+                 float: left;
+                height: 70px;
+                line-height: 70px;
+                padding: 0 40px;
+                font-size: 14px;
+            }
+            #nav li a:link{
+                color: #2c3a46;
+                text-decoration: none;
+            }
+            #login button, #zhuce button{
+                width: 80px;
+                height: 30px;
+            }
+            #login button{
+                background: white;
+                border: 1px solid #2B90ED;
+                color: #2B90ED;
+            }
+            #zhuce button{
+                background: #2B90ED;
+                border: 1px solid #2B90ED;
+                color: white;
+            }
+            .menu{
+                height: 550px;
+                padding-top: 75px; 
+                background: #2B90ED;
+            }
+            .menu .menu_content{
+                width: 1100px;
+                height: 550px;
+                margin: 0 auto;
+            }
+            .menu #list{
+                width: 190px;
+                height: 550px;
+                color: #666;
+                background: white;
+            }
+            #list_title{
+                width: 150px;
+                text-align: center;
+                font-size: 12px;
+                margin: 0 20px;
+                padding: 29px 0 23px;
+                border-bottom: 1px solid #e5e5e5;
+            }
+            #list_ul{
+                padding-top: 14px;
+            }
+            #list_ul li{
+                height: 40px;
+                line-height: 40px;
+                color: #333;
+                padding: 0 20px 0 30px;
+                margin-bottom: 15px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            
+            #list_ul li:hover{
+                background: #cdcdcd;
+            }
+            #fangan{
+                background: #f8f8f8;
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+            #fangan #slide-title{
+                font-size: 30px;
+                line-height: 30px;
+                color: #333;
+                text-align: center;
+            }
+            #fangan #slide-description{
+                font-size: 14px;
+                line-height: 24px;
+                color: #999;
+                margin-top: 10px;
+                text-align: center;
+            }
+            #fanganDiv{
+                width: 1100px;
+                margin: 0 auto;
+                margin-top: 60px;
+            }
+            .fangan2{
+                  margin-left: 30px;  
+            }
+            #fangan2{
+                width: 263px;
+                height: 157px;
+                 padding: 25px 40px; 
+                background: #fff;
+                display: inline-block;
+            }
+            #fangan2 img{
+                width: 28px;
+                height: 28px;
+            }
+            .fangan_title{
+                font-size: 20px;
+                margin-top: 20px;
+                color: #333;
+            }
+            .fangan_des{
+                font-size: 12px;
+                margin-top: 5px;
+                color: #666;
+                line-height: 22px;
+            }
+            .fangan_a:link{
+                font-size: 12px;
+                line-height: 22px;
+                margin-top: 10px;
+                color: #38f;
+                text-decoration: none;
+            }
+            #shengtai_title{
+                font-size: 30px;
+                /* text-align: center; */
+                padding-top: 100px;
+                line-height: 30px;
+            }
+            #shengtai_des{
+                margin-top: 10px;
+                padding-bottom: 67px;
+                font-size: 16px;
+                color: 16px;
+                line-height: 30px;
+                /* text-align: center; */
+            }
+            #shengtai{
+                 margin: 0 auto; 
+                width: 1100px;
+                text-align: center;
+                padding-bottom: 70px;
+            }
+            #shengtai ul{
+                margin: auto;
+                display: inline-block;
+            }
+            #shengtai ul li{
+                width: 137px;
+                height: 157px;
+                /* text-align: center; */
+                float: left;
+            }
+            #shengtai ul li:hover{
+                background: #cdcdcd;
+            }
+             #shengtai ul li img{
+                 width: 34px;
+                 height: 34px;
+                 margin-top: 35px;
+                 /* padding: 35px auto 31px; */
+             }
+             #shengtai ul li p{
+                 font-size: 12px;
+                 color: #666;
+                 line-height: 14px;
+                 margin-top: 31px;
+             }
+             #star{
+                 background: #f8f8f8;
+                 padding-bottom: 67px;
+             }
+             #star_content{
+                 width: 1100px;
+                 text-align: center;
+                 margin: 0 auto;
+                  padding-top: 100px; 
+             }
+             #star_title{
+                 font-size: 30px;
+                 line-height: 30px;
+                 color: #333;
+                 /* margin-top: 100px; */
+             }
+             #star_des{
+                 margin-top: 10px;
+             }
+             #star_ul{
+                margin-top: 67px;
+                display: inline-block;
+             }
+             #star_ul li{
+                 float: left;
+                 width: 80px;
+                 height: 80px;
+                 margin-right: 65px;
+                 margin-bottom: 60px;
+             }
+             .no-right{
+                 margin-right: 0;
+             }
+             #star_content button{
+                 width: 200px;
+                 height: 44px;
+                 border: 1px solid #2B90ED;
+                 background: white;
+                 border-radius: 2px;
+                 font-size: 14px;
+                 color: #07d;
+             }
+        </style>
+    
+    </head>
+    <body>
+        <!-- <div id="container"> -->
+            <div class="header">
+                <header>
+                    <img src="./img/youzan/logo.png" alt="">
+                    <div id="nav">
+                        <ul>
+                            <li><a href="#">首页</a></li>
+                            <li><a href="#">产品中心</a></li>
+                            <li><a href="#">行业方案</a></li>
+                            <li><a href="#">有赞云</a></li>
+                            <li><a href="#">渠道合作</a></li>
+                            <li style="padding: 0 20px 0 20px;"><a href="#">服务资源</a></li>
+                            <li id="login" style="padding: 0 0 0 10px;"><button type="">登陆</button></li>
+                            <li id="zhuce" style="padding: 0 0 0 10px;"><button type="">注册</button></li>
+                        </ul>
+                    </div>
+                </header>
+            </div>
+            
+            <div class="menu">
+                <div class="menu_content">
+                    <div id="list">
+                        <div id="list_title">
+                            做生意，拥有赞
+                        </div>
+                        <ul id="list_ul">
+                            <li>微商城</li>
+                            <li>有赞零售</li>
+                            <li>有赞餐饮</li>
+                            <li>有赞美业</li>
+                            <li>有赞收银</li>
+                            <li>有赞批发</li>
+                            <li>商家社区</li>
+                            <li>服务支持</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="fangan">
+                <p id="slide-title">垂直行业解决方案</p>
+                <p id="slide-description">面向不同行业，提供一站式产品服务支持</p>
+
+                <div id="fanganDiv">
+                    <div id="fangan2">
+                        <img src="/img/youzan/icon-1.png" alt="">   
+                        <p class="fangan_title">多网点解决方案</p>
+                        <p class="fangan_des">面向实体零售，完整的多网点线上经营方案，全渠道信息化管理工具</p>
+                        <a href="#" class="fangan_a">了解更多</a>
+                    </div>
+                    <div id="fangan2" class="fangan2">
+                        <img src="/img/youzan/icon-1.png" alt="">   
+                        <p class="fangan_title">多网点解决方案</p>
+                        <p class="fangan_des">面向实体零售，完整的多网点线上经营方案，全渠道信息化管理工具</p>
+                        <a href="#" class="fangan_a">了解更多</a>
+                    </div>
+                    <div id="fangan2" class="fangan2">
+                        <img src="/img/youzan/icon-1.png" alt="">   
+                        <p class="fangan_title">多网点解决方案</p>
+                        <p class="fangan_des">面向实体零售，完整的多网点线上经营方案，全渠道信息化管理工具</p>
+                        <a href="#" class="fangan_a">了解更多</a>
+                    </div>
+                </div>
+
+                <div id="fanganDiv" style="margin-top: 30px;">
+                    <div id="fangan2">
+                        <img src="/img/youzan/icon-1.png" alt="">   
+                        <p class="fangan_title">多网点解决方案</p>
+                        <p class="fangan_des">面向实体零售，完整的多网点线上经营方案，全渠道信息化管理工具</p>
+                        <a href="#" class="fangan_a">了解更多</a>
+                    </div>
+                    <div id="fangan2" class="fangan2">
+                        <img src="/img/youzan/icon-1.png" alt="">   
+                        <p class="fangan_title">多网点解决方案</p>
+                        <p class="fangan_des">面向实体零售，完整的多网点线上经营方案，全渠道信息化管理工具</p>
+                        <a href="#" class="fangan_a">了解更多</a>
+                    </div>
+                    <div id="fangan2" class="fangan2">
+                        <img src="/img/youzan/icon-1.png" alt="">   
+                        <p class="fangan_title">多网点解决方案</p>
+                        <p class="fangan_des">面向实体零售，完整的多网点线上经营方案，全渠道信息化管理工具</p>
+                        <a href="#" class="fangan_a">了解更多</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="shengtai">
+                <p id="shengtai_title">移动零售服务生态</p>
+                <p id="shengtai_des">联合服务商、开发者、经营专家，共建服务生态，服务百万商家</p>
+                <ul>
+                    <li>
+                        <img src="/img/youzan/icon-1.png" alt="">
+                        <p>服务市场</p>
+                    </li>
+                    <li>
+                        <img src="/img/youzan/icon-1.png" alt="">
+                        <p>服务市场</p>
+                    </li>
+                    <li>
+                        <img src="/img/youzan/icon-1.png" alt="">
+                        <p>服务市场</p>
+                    </li>
+                    <li>
+                        <img src="/img/youzan/icon-1.png" alt="">
+                        <p>服务市场</p>
+                    </li>
+                    <li>
+                        <img src="/img/youzan/icon-1.png" alt="">
+                        <p>服务市场</p>
+                    </li>
+                    <li>
+                        <img src="/img/youzan/icon-1.png" alt="">
+                        <p>服务市场</p>
+                    </li>
+                    <li>
+                        <img src="/img/youzan/icon-1.png" alt="">
+                        <p>服务市场</p>
+                    </li>
+                </ul>
+            
+            </div>
+
+            <div id="star">
+                <div id="star_content">
+                    <p id="star_title">明星商家</p>
+                    <p id="star_des">服务全行业商家，为各类企业提供全套解决方案</p>
+                
+                    <ul id="star_ul">
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li class="no-right" style="margin-right: 0;">
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li style="margin-right: 0;">
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li>
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+                        <li style="margin-right: 0;">
+                            <img src="/img/youzan/anl20.png" alt="">
+                        </li>
+
+                    </ul>
+
+                    <button type="">更多案例</button>
+                </div>
+            </div>
+            
+        <!-- </div> -->
+    </body>
+</html>
